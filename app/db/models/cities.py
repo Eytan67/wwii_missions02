@@ -11,7 +11,7 @@ class Cities(Base):
     latitude = Column(Numeric)
     longitude = Column(Numeric)
 
-    country = relationship('Country', lazy='immediate', back_populates='cities_list')
+    country = relationship('Countries', lazy='immediate', back_populates='cities_list')
 
     targets = relationship('Targets', lazy='immediate',back_populates='city')
 

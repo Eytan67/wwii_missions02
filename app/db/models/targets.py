@@ -2,7 +2,6 @@ from sqlalchemy import Column, Integer, String, Numeric, ForeignKey
 from app.db import Base
 from sqlalchemy.orm import relationship
 
-
 class Targets(Base):
     __tablename__ = 'targets'
     target_id = Column(Integer, nullable=False, primary_key=True, autoincrement=True)
