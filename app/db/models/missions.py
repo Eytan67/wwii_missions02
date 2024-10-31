@@ -5,7 +5,7 @@ from sqlalchemy.orm import relationship
 
 class Missions(Base):
     __tablename__ = 'missions'
-    mission_id = Column(Integer, nullable=False, autoincrement=True)
+    mission_id = Column(Integer, nullable=False, primary_key=True, autoincrement=True)
     mission_date = Column(Date)
     airborne_aircraft = Column(Numeric)
     attacking_aircraft = Column(Numeric)
@@ -14,4 +14,6 @@ class Missions(Base):
     aircraft_failed = Column(Numeric)
     aircraft_damaged = Column(Numeric)
     aircraft_lost = Column(Numeric)
+
+    targets = relationship('Targets', lazy='immediate', back_populates='mission')
 
